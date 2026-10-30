@@ -10,6 +10,7 @@ test(`tour auto-plays, yields to scrubbing and releases at ${viewport.width}px`,
  expect(await page.locator('.sequence').evaluate(e=>Math.abs(e.getBoundingClientRect().height-innerHeight))).toBeLessThan(2);
  expect(await page.evaluate(()=>window.hotelTour.state.engaged)).toBeFalsy();
  expect(await page.evaluate(()=>window.hotelTour.state.autoplay)).toBeFalsy();
+ await expect(page.locator('#tour-finale')).toBeHidden();
  if(viewport.width===390)await expect(page.locator('.sequence-poster img')).toHaveCSS('object-position','73% 50%');
  await expect(page.getByRole('link',{name:'Book your stay',exact:true})).toHaveAttribute('href','/booking/');
  await expect(page.getByRole('link',{name:'Scroll to discover',exact:true})).toHaveAttribute('href','#welcome');
@@ -39,6 +40,10 @@ test(`tour auto-plays, yields to scrubbing and releases at ${viewport.width}px`,
  await expect.poll(()=>page.evaluate(()=>window.hotelTour.state.target),{timeout:12000}).toBe(220);
  await expect.poll(()=>page.evaluate(()=>window.hotelTour.state.autoplay)).toBeFalsy();
  await expect(page.locator('#sequence-canvas')).toHaveAttribute('data-frame','220');
+ await expect(page.locator('#tour-finale')).toHaveClass(/is-visible/);
+ await expect(page.getByRole('link',{name:/here/})).toHaveAttribute('href','/booking/');
+ await page.getByRole('link',{name:/here/}).focus();
+ await expect(page.getByRole('link',{name:/here/})).toBeFocused();
  if(viewport.width===1440)await expect(page.locator('#sequence-frame')).toHaveText('220');
  await page.screenshot({path:`test-results/new-hero-${viewport.width}-end.png`});
  expect(await page.locator('.sequence-stage').evaluate(e=>Math.abs(e.getBoundingClientRect().top))).toBeLessThan(2);
