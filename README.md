@@ -8,7 +8,7 @@ A custom, image-led hospitality experience for St. Jacobs Hotel in Akure, Nigeri
 
 ## Project highlights
 
-- Static-first cinematic hero that waits for the visitor's first intentional downward scroll
+- Static-first cinematic hero that begins its full automatic tour after the visitor's first intentional downward scroll
 - One responsive canvas rendering 220 ordered hotel frames with smooth forward and reverse playback
 - Progressive frame loading: 30 priority frames first, followed by paced background batches
 - Mobile-specific composition, touch stabilization and dynamic viewport handling
@@ -67,7 +67,7 @@ The production output is written to `dist/`.
 
 ## Hero and loader
 
-The homepage begins as a normal one-screen composition with frame 1 held still. The pinned sequence engages only after an intentional downward wheel, touch, keyboard or scroll gesture. A single canvas maps native scroll progress to 220 ordered WebP frames, uses interpolation for fluid playback, and plays in reverse when the visitor scrolls upward. The centered logo loader runs on each page load while the first 30 priority frames warm in the background. Reduced-motion visitors receive a static composition without the extended pinned sequence.
+The homepage begins as a normal one-screen composition with frame 1 held still. The pinned sequence engages only after an intentional downward wheel, touch, keyboard or scroll gesture, then automatically plays the complete 220-frame tour. A single canvas uses interpolation for fluid playback. Wheel, touch and keyboard input temporarily pause the automatic movement for manual scrubbing; playback resumes after a short idle period. The centered logo loader runs on each page load while the first 30 priority frames warm in the background. Reduced-motion visitors receive a static composition without the extended pinned sequence.
 
 ![St. Jacobs Hotel mobile experience](docs/screenshots/st-jacobs-mobile.png)
 

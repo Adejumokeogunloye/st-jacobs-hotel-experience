@@ -8,6 +8,15 @@ The newest 274-frame JPEG archive was extracted and preserved. Thirty evenly spa
 
 # Verification
 
+## Automatic sequence playback — 30 October 2026
+
+- The landing hero remains a standard single-viewport frame until the first intentional downward wheel, touch, keyboard or scroll gesture.
+- One gesture engages the sticky sequence and starts timed requestAnimationFrame playback through all 220 frames without requiring continued scrolling.
+- Wheel, touch and keyboard input pause automatic movement for manual scrubbing; playback resumes after 700 ms of inactivity.
+- The first 30 frames retain priority loading, with the remaining WebP frames loaded in paced background chunks.
+- Desktop (1440 × 900) and mobile (390 × 844) browser tests verify auto-play, manual reverse scrub, idle resume, final-frame release and canvas centering.
+- `npm test`: 18 passed. `npm run test:browser`: 15 passed. `npm run build`: passed.
+
 ## Logo and design refinement
 
 - Added the supplied hotel crest to the header, footer and favicon. Monochrome CSS presentation preserves the source asset.
