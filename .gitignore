@@ -1,0 +1,12 @@
+node_modules/
+dist/
+test-results/
+.sites-runtime/
+.data/
+src-assets/
+.env
+.env.local
+.env.*.local
+
+.vercel
+.env*

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0e1b3d">
+  <meta name="description" content="Explore St. Jacobs Hotel rooms, facilities and guest information in Akure.">
+  <title>St. Jacobs Hotel · Akure</title>
+  <link rel="icon" type="image/png" href="/images/st-jacobs-logo.png">
+</head>
+<body data-page="rooms">
+  <div id="site-root"></div>
+  <noscript>This page requires JavaScript to display its navigation and content.</noscript>
+  <script>try{const p=location.pathname.split('/').filter(Boolean);const map={annex:'annex',facilities:'facilities','blaze-and-jacob':'blaze',about:'about',gallery:'gallery',contact:'contact',booking:'booking',blog:'blog','manage-booking':'manage'};document.body.dataset.page=p[0]==='rooms'&&p[1]?'room':(map[p[0]]||'rooms');if(document.body.dataset.page==='room')document.body.dataset.slug=p[1]}catch{}</script>
+  <script src="/supabase-config.js"></script>
+  <script type="module" src="/src/internal.js"></script>
+</body>
+</html>

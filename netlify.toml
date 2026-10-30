@@ -1,0 +1,78 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/rooms/*"
+  to = "/internal.html"
+  status = 200
+
+[[redirects]]
+  from = "/annex/*"
+  to = "/internal.html"
+  status = 200
+
+[[redirects]]
+  from = "/facilities/*"
+  to = "/internal.html"
+  status = 200
+
+[[redirects]]
+  from = "/blaze-and-jacob/*"
+  to = "/internal.html"
+  status = 200
+
+[[redirects]]
+  from = "/about/*"
+  to = "/internal.html"
+  status = 200
+
+[[redirects]]
+  from = "/gallery/*"
+  to = "/internal.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact/*"
+  to = "/internal.html"
+  status = 200
+
+[[redirects]]
+  from = "/booking/*"
+  to = "/internal.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/internal.html"
+  status = 200
+
+[[redirects]]
+  from = "/manage-booking/*"
+  to = "/internal.html"
+  status = 200
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/hero-frames/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/supabase-config.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

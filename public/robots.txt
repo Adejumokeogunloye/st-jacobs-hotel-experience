@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /manage-booking/
+Sitemap: https://saintjacobshotel.com/sitemap.xml

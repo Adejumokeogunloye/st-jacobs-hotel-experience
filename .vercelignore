@@ -1,0 +1,10 @@
+node_modules
+dist
+test-results
+.data
+.git
+.vercel
+src-assets
+browser-tests
+tests
+*.zip
